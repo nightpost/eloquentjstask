@@ -1,9 +1,9 @@
 // return array within a range 
 // if step missed step === 1
-function range(start, end, step){
+function range(start, end, step) {
 	var arr = [];
 
-	if(!isNaN(start) && !isNaN(end)){
+	if(!isNaN(start) && !isNaN(end)) {
 		var i = 0;
 		if(step === undefined || step === 0) {
 			for(start; start <= end ; start++) {
@@ -23,7 +23,6 @@ function range(start, end, step){
 	} else {
 		return 'start/end isn\'t number';
 	}
-
 	return arr;
 }
 
@@ -32,7 +31,7 @@ function range(start, end, step){
 function reverseArray(arr) {
 	var res = [];
 	var len = arr.length - 1;
-	arr.forEach(function(e, i){
+	arr.forEach(function(e, i) {
 		res[len - i] = e;
 	});
 	return res;
@@ -47,7 +46,7 @@ function reverseArrayInPlace(arr) {
 	var index = len - 1;
 	var i = 0;
 
-	for(i; i !== halflen; i++){
+	for(i; i !== halflen; i++) {
 		temp = arr[i];
 		arr[i] = arr[index - i];
 		arr[index - 1] = temp;
@@ -67,10 +66,10 @@ function arrayToList(arr) {
 
 
 // transform list to array
-function listToArray(list){
+function listToArray(list) {
 	var arr = [];
 	var i = 0;
-	while(list){
+	while(list) {
 		arr[i++] = list.value;
 		list = list.rest;
 	}
@@ -112,9 +111,9 @@ function deepEqual(x, y) {
 	if(x === y) {
 		return true;
 	}
-	if(typeof x === typeof y){
-		if(typeof x === 'object' && x && y){
-			for(var key in x){
+	if(typeof x === typeof y) {
+		if(typeof x === 'object' && x && y) {
+			for(var key in x) {
 				if(y[key]) {
 					if(!deepEqual(x[key], y[key])) {
 						return false;
